@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+		<h1>Login</h1>
+		<form method="POST" action="j_security_check">
+			<table>
+				<tr>
+					<td>Usename:</td>
+					<td> <input type="text"  required="true" name="j_username" size="30"/> </td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td> <input type="password"  required="true" name="j_password" size="30"/> </td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td> <button type="submit">Login</button> </td>
+				</tr>
+
+			</table>
+
+		</form>
+		 <li><a href="#{request.contextPath}/faces/register.xhtml">Register</a></li>
+    </h:body>
+</html>
+

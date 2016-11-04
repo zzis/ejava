@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        <script src="#{request.contextPath}/js/jquery.min.js"></script>
+        <script src="#{request.contextPath}/js/ws.js"></script>
+    </h:head>
+<!--        <h:body>
+		<li><a href="#{request.contextPath}/faces/login.xhtml">Login</a></li>
+    </h:body>-->
+
+    <h:form>
+        <ul>
+            <ui:repeat value="#{noteResource.categoryList}" var="cat">
+                <li>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="catIds[]" checked="checked" id="catIds-${cat}" value="${cat}"/>
+                            <h:outputText value="${cat}"/>
+                        </label>
+                    </div>
+                </li>
+            </ui:repeat>
+            <button type="button" id="start">start</button>
+        </ul>
+        <li><a href="#{request.contextPath}/faces/login.xhtml">Login</a></li>
+        <li><a href="#{request.contextPath}/faces/manage/menu.xhtml">Note Menu</a></li>
+      
+        <table id="notes">
+            <thead>
+            <tr>
+              <th>Title</th>
+              <th>Posted Date</th>
+              <th>Category</th>
+              <th>Content</th>
+            </tr>
+            </thead>
+            <tbody>
+                <!--<ui:repeat value="#{noteResource.allNotes}" var="note">-->
+                    <tr>
+<!--                        <td><h:outputText value="${note.getString('title')}"/></td>
+                        <td><h:outputText value="${note.getString('create_date')}"/></td>
+                        <td><h:outputText value="${note.getString('category')}"/></td>
+                        <td><h:outputText value="${note.getString('content')}"/></td>-->
+                    </tr>
+                <!--</ui:repeat>-->
+            </tbody>
+        </table>
+    </h:form>
+    <script>
+        
+    </script>
+</html>
+

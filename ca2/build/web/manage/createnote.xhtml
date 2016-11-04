@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+	<head>
+		<title>Create Notes</title>
+                <script src="#{request.contextPath}/js/jquery.min.js"></script>
+	</head>
+	<body>
+            <h:form>
+                <div>Title: <h:inputText required="true" value="#{noteResource.title}"/></div>
+                <div>
+                    Category: 
+                    <h:selectOneMenu value="#{noteResource.category}">
+                        <f:selectItems  value="#{noteResource.getCategoryList()}"/>
+                    </h:selectOneMenu>
+                </div>
+                <div>Content <h:inputTextarea required="true" value="#{noteResource.content}"/></div>
+                <h:commandButton value="Create" action="#{noteResource.createNote}" />
+            </h:form>
+            <a class="navbar-brand" href="#{request.contextPath}/faces/manage/menu.xhtml">Back</a>
+	</body>
+    <script>
+        $(function(){
+            $("#create").on("click", function(){
+                $('#title').blur(function() {
+                    if( !$(this).val() ) {
+                        alert("title can not be null");
+                        return false;
+                    }
+                });
+                $('#content').blur(function() {
+                    if( !$(this).val() ) {
+                        alert("title can not be null");
+                        return false;
+                    }
+                });
+            });
+        });
+    </script>
+</html>

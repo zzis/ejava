@@ -5,4 +5,8 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>
+  <persistence-unit name="week03_caPU2" transaction-type="JTA">
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties/>
+  </persistence-unit>
 </persistence>
